@@ -86,8 +86,11 @@ Promises:
   - 
 */
 void UserApp1Initialize(void)
-{
+{    
  
+
+
+   
   /* If good initialization, set state to Idle */
   if( 1 )
   {
@@ -135,9 +138,112 @@ State Machine Function Definitions
 /*-------------------------------------------------------------------------------------------------------------------*/
 /* Wait for ??? */
 static void UserApp1SM_Idle(void)
+{  static u16 u16BlinkCount = 0;
+
+u16BlinkCount++;
+if(u16BlinkCount == 100)
+{
+  LedOn(WHITE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 300)
+{
+ LedOn(PURPLE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 500)
+{
+  LedOn(BLUE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 700)
+{
+  LedOn(CYAN);
+  u16BlinkCount++;
+}
+
+
+
+if(u16BlinkCount == 900)
+{
+  LedOn(GREEN);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 1100)
+{
+ LedOn(YELLOW);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 1300)
+{
+  LedOn(ORANGE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 1500)
+{
+  LedOn(RED);
+  u16BlinkCount++;
+}
+
+if(u16BlinkCount == 1700)
+{
+  
+  LedOff(WHITE); 
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 1900)
+{
+ 
+  LedOff(PURPLE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 2100)
+{
+ 
+ LedOff(BLUE);
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 2300)
 {
 
-} /* end UserApp1SM_Idle() */
+  LedOff(CYAN);
+  u16BlinkCount++;
+}
+
+
+if(u16BlinkCount == 2500)
+{
+  LedOff(GREEN);
+  
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 2700)
+{
+  LedOff(YELLOW); 
+ 
+  u16BlinkCount++;
+}
+if(u16BlinkCount == 2900)
+{
+ LedOff(ORANGE);
+ 
+  u16BlinkCount++;
+}
+
+
+if(u16BlinkCount == 3100)
+{
+  LedOff(RED);
+  
+  u16BlinkCount=0;
+}
+
+  
+  
+}
+
+
+/* end UserApp1SM_Idle() */
     
 
 /*-------------------------------------------------------------------------------------------------------------------*/
